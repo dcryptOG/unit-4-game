@@ -1,0 +1,136 @@
+body {
+    background: aqua; /* For browsers that do not support gradients */
+    background: linear-gradient(to right, rgba(0, 0, 0, .9), white);
+    background-size: cover;
+    color: black;
+    text-shadow: 1px 1px 2px rgb(255, 230, 0), 0 0 25px yellow, 0 0 5px yellowgreen;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    min-height: 1800px;
+}
+
+#top {
+    display: flex;
+    flex-flow: column wrap;
+    margin: auto;
+    text-align: center;
+    background-image: url("../images/deathstar.png");
+    background-repeat: repeat;
+}
+
+#top a {
+    color: black;
+    text-decoration: none;
+    font-size: 50px;
+}
+
+ #avatarSelection{
+    display: inline-flex;
+    margin: auto;
+    flex-flow: row wrap;
+    justify-content: center;
+    width: 100%;
+    outline: 20px solid red;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    display: none;
+    margin: 0;
+    list-style: none; /** Remove list bullets */
+    width: 100%; /** Set the width to 100% of it's parent */
+    padding: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/** Button Styles **/
+.dropdown button {
+    /*! border: none; */
+    margin: 0;
+    padding: 0.4em 0.8em;
+    font-size: 1em;
+}
+
+/** List Item Styles **/
+.dropdown a {
+    display: none;
+    padding: 0.2em 0.8em;
+    text-decoration: none;
+    background: #CCCCCC;
+    color: #333333;
+}
+
+/** List Item Hover Styles **/
+.dropdown li:hover a {
+    background: #BBBBBB;
+    display: block;
+    color: red;
+}
+
+#battle {
+    display: flex;
+    justify-content: center;
+    height: 400px;
+    margin-top: 100px;
+    border: 20px solid red;
+}
+
+#attack{
+	height: 50px;
+    width: 200px;
+    font-size: 40px;
+	border: none;
+    background-color: red;
+    outline: 20px solid black;
+    margin-top: 50px;
+}
+
+.noDisplayStatusPlayer {
+	display: none;
+}
+
+.playerStats {
+	color: #e5c100;
+}
+
+.noDisplayStatusDefender {
+	display: none;
+}
+
+.progress {
+  	background-image: none;
+	background-color: #db5353;
+	-webkit-box-shadow: none;
+  	box-shadow: none;
+}
+
+.progress-bar {
+	float: right;
+	background-image: none;
+	background-color: #4cbb17;
+}
+
+/* #playerHealth {
+}
+
+#playerAttackPower {
+}
+
+#defenderHealth {
+} */
+/* 
+.defenderStatus {
+	color: #e5c100;
+}
+
+.playerChoice {
+} */
