@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link rel="stylesheet" type="text/css" href="assets/css/unit4game.css">
-    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/unit4game.css">    <script src="https://code.jquery.com/jquery.js"></script>
     <title>Star Wars</title>
 </head>
 
@@ -30,161 +29,119 @@
     </section>
 
     <section>
-        <div class='wrapper' id='avatarSelection'>
+        <div class='wrapper' id='heroSelection'>
 
             <div class="dropdown">
                 <button id="yoda" class="avatar" value="yoda">
-                    <img src="assets/images/yoda.png" class="img-fluid">
+                    <img src="assets/images/yoda.png" class=".yoda">
                 </button>
                 <ul class="dropdown-menu">
                     <li>Health=
-                        <a href="#health">100</a>
+                        <a href="#health">350</a>
                     </li>
                     <li>Attack=
-                        <a href="#health">100</a>
+                        <a href="#attack">16</a>
                     </li>
                     <li>Counter Attack=
-                        <a href="#health">100</a>
+                        <a href="#counter">40</a>
                     </li>
                 </ul>
             </div>
 
             <div class="dropdown">
                 <button id="sidious" class="avatar" value="sidious">
-                    <img src="assets/images/sidious.png" class="img-fluid">
+                    <img src="assets/images/sidious.png" class=".sidious">
                 </button>
                 <ul class="dropdown-menu">
                     <li>Health=
-                        <a href="#health">100</a>
+                        <a href="#health">180</a>
                     </li>
                     <li>Attack=
-                        <a href="#health">100</a>
+                        <a href="#attackS">14</a>
                     </li>
                     <li>Counter Attack=
-                        <a href="#health">100</a>
+                        <a href="#counterS">50</a>
                     </li>
                 </ul>
             </div>
 
             <div class="dropdown">
-                <button id="ray" class="avatar" value="ray">
-                    <img src="assets/images/ray.png" class="img img-fluid">
+                <button id="rae" class="avatar" value="rae">
+                    <img src="assets/images/ray.png" class=".rae" id='avatarImg'>
                 </button>
                 <ul class="dropdown-menu">
                     <li>Health=
-                        <a href="#health">100</a>
+                        <a href="#health">250</a>
                     </li>
                     <li>Attack=
-                        <a href="#health">100</a>
+                        <a href="#attackS">16</a>
                     </li>
                     <li>Counter Attack=
-                        <a href="#health">100</a>
+                        <a href="#counterS">10</a>
                     </li>
                 </ul>
             </div>
 
             <div class="dropdown">
                 <button id="vader" class="avatar" value="vader">
-                    <img src="assets/images/vader.png" class="img-fluid">
+                    <img src="assets/images/vader.png" class=".vader">
                 </button>
                 <ul class="dropdown-menu">
                     <li>Health=
-                        <a href="#health">100</a>
+                        <a href="#health">200</a>
                     </li>
                     <li>Attack=
-                        <a href="#health">100</a>
+                        <a href="#health">18</a>
                     </li>
                     <li>Counter Attack=
-                        <a href="#health">100</a>
+                        <a href="#health">25</a>
                     </li>
                 </ul>
             </div>
-        </div>
+            <p class='fight-notification'>Fight!</p>
+            <div class='win'>
+                <br>
+                <br>
+                <br>
+                <p>You Win! ... nerd!</p>
+            </div>
+            <div class='lose'>
+                <br>
+                <br>
+                <br>
+                <p>You Lose Nerd!</p>
+            </div>
         </div>
     </section>
 
-
     <section class='battle'>
-        <div class='flex-container' id='battle'>
-            <div class="row">
-                <div id="attackButtonSpace" class="col-lg-12">
-                    <button id="attack" class="noDisplay"> attack </button>
+        <div class='grid-container' id='battle'>
+
+            <div id="hero-box">
+                <picture id='hero-body'>
+                </picture>
+                <div id="hero-health">
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col" id='hero-box'>
-                    <ul class="noDisplayStatusPlayer playerStats">
-                        <li>
-                            <div id="enemy-box" class="card bg-light hidden">
-                                <div id="enemy-body" class="card-body bg-white">
-                                </div>
-                            </div>
-                        </li>
-                        <div id="hero-box" class="card hidden">
-                            <div id="hero-body">
-                            </div>
-                            <div>Health:
-                                <p id="hero-health"></p>
-                            </div>
-                        </div>
-
-                        <li>
-                            <div id="attack-button"></div>
-                            <div id="attack-nar"></div>
-                            <div id="message-box"></div>
-                            <div id="restart"></div>
-                        </li>
-
-                        <li>
-                            <div id="enemy-box" class="card hidden">
-                                <div class="card-header text-white bg-danger">
-                                    <h4 class="card-title">Challenger</h4>
-                                </div>
-                                <div id="challenger-body" class="card-body">
-                                </div>
-                                <div class="card-footer">Challenger Health:
-                                    <p id="challenger-health"></p>
-                                </div>
-                            </div>
-                        </li>
-
-                        <!-- <li>
-                            <div class="progress">
-                                <div id="playerHealth" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="0" style="width: 100%;">
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="progress">
-                                <div id="playerAttackPower" class="progress-bar" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="0"
-                                    style="width: 100%;">
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+            <div id='battle-info'>
+                <div id="attack-button">
                 </div>
-                <div class='col'>
-                    <ul class="defenderStatus noDisplayStatusDefender">
-                        <li></li id='challenger-health'>
-                        <li></li id='challenger-body'>
-                        <li>
-                            <div class="progress">
-                                <div id="defenderHealth" class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"
-                                    style="width: 100%;">
-                                </div>
-                            </div>
-                        </li> -->
+                <div id="attack-nar"></div>
+                <div id="message-box"></div>
+                <div id="restart"></div>
+            </div>
 
-                    </ul>
+            <div id="enemy-box">
+                <picture id='challenger-body'>
+                </picture>
+                <div id='challenger-health'>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 </body>
 
-<script src="https://code.jquery.com/jquery.js"></script>
 <script type="text/javascript" src="assets/js/unit4game.js"></script>
-
-
 </html>
